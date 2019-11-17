@@ -13,7 +13,7 @@ class TeamSerializer(serializers.HyperlinkedModelSerializer):
 class PlayerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Player
-        fields = ['team', 'first_name', 'last_name', 'image_uri', 'jersey_number', 'country']
+        fields = ['id', 'team', 'first_name', 'last_name', 'image_uri', 'jersey_number', 'country']
 
 class PlayerStatsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -24,7 +24,7 @@ class PlayerStatsSerializer(serializers.HyperlinkedModelSerializer):
 class MatchesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Matches
-        fields = ['team1', 'team2', 'winner']
+        fields = ['id', 'team1', 'team2', 'winner']
     
     def validate(self, data):
     	
