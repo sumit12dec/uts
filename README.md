@@ -163,7 +163,7 @@ Delete Team:
 
 Create Player:
 
-`curl -X POST http://127.0.0.1:8000/info/player/ -d '{"team": "http://127.0.0.1:8000/info/team/1/", "first_name": "Rohit", "image_uri": "https://domain.com/rs.png", "last_name": "Sharma", "country": "India"}' -H 'Content-Type: application/json'`
+`curl -X POST {{host}}/info/player/ -d '{"team": "{{host}}/info/team/1/", "first_name": "Rohit", "image_uri": "https://domain.com/rs.png", "last_name": "Sharma", "country": "India"}' -H 'Content-Type: application/json'`
 
 
 
@@ -189,8 +189,8 @@ Delete Player:
 
 Create Player Stats:
 
-`curl -X POST http://127.0.0.1:8000/info/player-stats/ -d '{`
-    `"player": "http://127.0.0.1:8000/info/player/1/",`
+`curl -X POST {{host}}/info/player-stats/ -d '{`
+    `"player": "{{host}}/info/player/1/",`
     `"matches_count": 321,`
     `"runs_count": 8408,`
     `"highest_score": 118,`
@@ -222,7 +222,7 @@ Delete Player Stats:
 
 Create Match:
 
-`curl -X POST http://127.0.0.1:8000/info/matches/ -d '{"team1": "http://127.0.0.1:8000/info/team/3/", "team2": "http://127.0.0.1:8000/info/team/4/", "winner": "http://127.0.0.1:8000/info/team/3/"}' -H 'Content-Type: application/json'`
+`curl -X POST {{host}}/info/matches/ -d '{"team1": "{{host}}/info/team/3/", "team2": "{{host}}/info/team/4/", "winner": "{{host}}/info/team/3/"}' -H 'Content-Type: application/json'`
 
 
 
@@ -234,7 +234,7 @@ Get Match:
 
 Update Match:
 
-`curl -X PATCH {{host}}/info/matches/174/ -d '{"winner": "http://127.0.0.1:8000/info/team/2/"}' -H 'Content-Type: application/json'`
+`curl -X PATCH {{host}}/info/matches/174/ -d '{"winner": "{{host}}/info/team/2/"}' -H 'Content-Type: application/json'`
 
 
 
