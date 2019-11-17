@@ -18,6 +18,8 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
+    path('api/login', views.login),
+
     path('team', views.index, name='index'),
 
     path('team/<int:team_id>', views.player, name='player'),

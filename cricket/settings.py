@@ -25,7 +25,7 @@ SECRET_KEY = 'tl8iw9e_b!#b=_oj@!67q^l75&r*z7ce-x1si0%pkx&_5k_!ey'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['utsinterview-env.uvppnpfbjm.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
