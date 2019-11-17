@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">    table, th, td{
+        border: 1px solid #666;
+    }
+    table th, table td{
+        padding: 10px; /* Apply cell padding */
+    }</style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    	<h3>Teams</h3>
+		<table class="table-bordered" style="padding: 10px;">
+		  <thead>
+		    <tr>
+		      <th scope="col">Logo</th>
+		      <th scope="col">Team Name</th>
+		      <th scope="col">Club State</th>
+
+		    </tr>
+		  </thead>
+		  <tbody>
+<!-- 		  	{% debug %}
+ -->
+
+		  	{% for t in teams %}
+
+		  			    <tr>
+	     
+
+		      <td class="">
+		      	<img src="{{t.logo_uri}}" class="img-circle" alt="{{t.name}}" style="
+    width: 80px;
+    height: 80px;
+">
+
+		      </td>
+  <td><a href="/team/{{t.id}}">{{t.name}}</a></td>
+
+
+		      <td>{{t.club_state}}</td>
+
+		    </tr>
+			{% endfor %}
+
+
+		    
+		  </tbody>
+		</table>   
+    </div>
+
+    <div class="col-md-6">
+    	<h3>Points Table</h3>
+    	<table class="table-bordered" style="padding: 10px;">
+		  <thead>
+		    <tr>
+		      <th scope="col">Team Name</th>
+		     <th scope="col">Matches</th>
+
+		      <th scope="col">Wins</th>
+		      <th scope="col">Lost</th>
+		      <th scope="col">Points</th>
+
+		    </tr>
+		  </thead>
+		  <tbody>
+<!-- 			  	{% debug %}
+ -->
+
+		  	{% for t in points %}
+
+		  			    <tr>
+	     
+
+  <td><a href="/team/{{t.0}}">{{t.1}}</a></td>
+
+
+		      <td>{{t.2}}</td>
+		      <td>{{t.3}}</td>
+		      <td>{{t.4}}</td>
+		      <td>{{t.3}}</td>
+
+		    </tr>
+			{% endfor %}
+
+
+		    
+		  </tbody>
+		</table>   
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

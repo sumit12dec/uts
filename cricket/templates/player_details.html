@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">    table, th, td{
+        border: 1px solid #666;
+    }
+    table th, table td{
+        padding: 10px; /* Apply cell padding */
+    }</style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+    	<h3>Player Stats</h3>
+		<table class="table-bordered" style="padding: 10px;">
+		  <thead>
+		    <tr>
+		    <th scope="col">Name</th>
+		    <th scope="col">Team</th>
+		      <th scope="col">Matches</th>
+		      <th scope="col">Runs</th>
+		      <th scope="col">Highest</th>
+		      <th scope="col">Fifties</th>
+		      <th scope="col">Hundreds</th>
+
+		    </tr>
+		  </thead>
+		  <tbody>
+    	
+<!-- 		  	{% debug %}
+ -->
+		  	{% for pd in player_details %}
+		  			    <tr>
+		      <td>{{pd.player.first_name }} {{pd.player.last_name}} </td>
+
+<td><a href="/team/{{pd.player.team.id}}"> {{pd.player.team.name}}</a></td>
+
+		      <td>{{pd.matches_count}}</td>
+
+  <td>{{pd.runs_count}}</td>
+
+	<td>{{pd.highest_score}}</td>
+	<td>{{pd.fifties_count}}</td>
+	<td>{{pd.hundreds_count}}</td>
+
+
+		    </tr>
+			{% endfor %}
+
+
+		    
+		  </tbody>
+		</table>   
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

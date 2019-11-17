@@ -1,0 +1,16 @@
+
+for team1 in Team.objects.all():
+	for team2 in Team.objects.all():
+		if team1 == team2:
+			continue
+		json = {'team1': team1, 'team2': team2, 'winner': random.choice([team1, team2])}
+		Matches.objects.create(**json)
+
+
+
+curl -X POST http://127.0.0.1:8000/info/matches/ -d '{"team1": "http://127.0.0.1:8000/info/team/3/", "team2": "http://127.0.0.1:8000/info/team/4/", "winner": "http://127.0.0.1:8000/info/team/3/"}' -H 'Content-Type: application/json'
+
+
+
+for team in Team.objects.all():
+	m = Matches.object.filter(Q(team1=team) | Q(team2=team) and winner=team)

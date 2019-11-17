@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">    table, th, td{
+        border: 1px solid #666;
+    }
+    table th, table td{
+        padding: 10px; /* Apply cell padding */
+    }</style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    	<h3>Players - {{team_name}}</h3>
+		<table class="table-bordered" style="padding: 10px;">
+		  <thead>
+		    <tr>
+		      <th scope="col">First Name</th>
+		      <th scope="col">Last Name</th>
+		      <th scope="col">Picture</th>
+		      <th scope="col">Country</th>
+
+		    </tr>
+		  </thead>
+		  <tbody>
+<!-- 		  	{% debug %}
+ -->
+<!-- {{players}}
+ -->		  	{% for p in players %}
+
+		  			    <tr>
+	     
+		      <td>{{p.first_name}}</td>
+
+  <td>{{p.last_name}}</td>
+
+
+		      <td class="">
+		      	<a href="/team/{{p.team.id}}/player/{{p.id}}">
+		      	<img src="{{p.image_uri}}" class="img-circle" alt="{{p.first_name}}" style="
+    width: 80px;
+    height: 80px;
+">
+</a>
+
+		      </td>
+
+		      		      <td>{{p.country}}</td>
+
+
+		    </tr>
+			{% endfor %}
+
+
+		    
+		  </tbody>
+		</table>   
+    </div>
+
+
+        <div class="col-md-6">
+        	<h3>Matches</h3>
+		<table class="table-bordered" style="padding: 10px;">
+		  <thead>
+		    <tr>
+		      <th scope="col">Team1</th>
+		      <th scope="col">Team2</th>
+		      <th scope="col">Winner</th>
+		      <th scope="col">Points</th>
+
+		    </tr>
+		  </thead>
+		  <tbody>
+<!-- 		  	{% debug %}
+ -->
+<!-- {{players}}
+ -->		  	{% for m in matches %}
+
+		  			    <tr>
+	     
+		      <td>{{m.team1}}</td>
+
+  <td>{{m.team2}}</td>
+
+
+
+		      		      <td>{{m.winner}}</td>
+		      		      <td>{% if team_id == m.winner.id %}
+		      		      		1
+		      		      		{% else %}
+		      		      		0
+		      		      		{% endif %}
+		      		      </td>
+
+
+		    </tr>
+			{% endfor %}
+
+
+		    
+		  </tbody>
+		</table>   
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
