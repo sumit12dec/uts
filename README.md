@@ -243,6 +243,7 @@ Delete Match:
 `curl -X DELETE {{host}}/info/matches/174/`
 
 
+Application is hosted using Elastic Beanstalk by AWS here: http://utsinterview-env.uvppnpfbjm.us-east-1.elasticbeanstalk.com/info/
 
 
 
