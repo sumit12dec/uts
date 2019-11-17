@@ -244,10 +244,14 @@ Delete Match:
 
 
 ### Application is hosted using Elastic Beanstalk by AWS here: 
+
+http://utsinterview-env.uvppnpfbjm.us-east-1.elasticbeanstalk.com/team
+
+### Browsable APIs can be checked here live:
 http://utsinterview-env.uvppnpfbjm.us-east-1.elasticbeanstalk.com/info/
 
 
-#### Auth is disabled purposefully for easier navigation of all GET APIs using interface.
+#### API level Auth is disabled purposefully for easier navigation of all GET APIs using interface.
 
 http://utsinterview-env.uvppnpfbjm.us-east-1.elasticbeanstalk.com/admin/ panel can be used to alternatively perform CRUD operations on various models. 
 
