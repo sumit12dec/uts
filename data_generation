@@ -8,9 +8,23 @@ for team1 in Team.objects.all():
 
 
 
-curl -X POST http://127.0.0.1:8000/info/matches/ -d '{"team1": "http://127.0.0.1:8000/info/team/3/", "team2": "http://127.0.0.1:8000/info/team/4/", "winner": "http://127.0.0.1:8000/info/team/3/"}' -H 'Content-Type: application/json'
+curl -X POST http://127.0.0.1:8000/api/login/ -d '{"username":"sumit", "password": "sumit"}' -H 'Content-Type: application/json'
 
 
 
 for team in Team.objects.all():
-	m = Matches.object.filter(Q(team1=team) | Q(team2=team) and winner=team)
+	m = Matches.objects.filter(Q(team1=team) | Q(team2=team) & Q(winner=team)).count()
+	print(m)
+
+
+curl -X PATCH http://127.0.0.1:8000/info/team/1/ -d '{"name": "Mumbai Indians"}' -H 'Content-Type: application/json'
+
+
+
+curl -X POST http://127.0.0.1:8000/info/player/ -d '{"team": "http://127.0.0.1:8000/info/team/1/", "first_name": "Rohit", "image_uri": "https://domain.com/rs.png", "last_name": "Sharma", "country": "India"}' -H 'Content-Type: application/json'
+
+curl -X GET http://utsinterview-env.uvppnpfbjm.us-east-1.elasticbeanstalk.com/info/player/1/?format=json -H 'Authorization: Token d5cc739c3c12e861ad3e0d607aa76cdb84c41755'
+
+
+
+{"username": "sumit", "password": "sumit"}

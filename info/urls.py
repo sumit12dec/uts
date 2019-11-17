@@ -2,6 +2,7 @@ from django.urls import include, path
 from rest_framework import routers
 from info import views
 
+
 router = routers.DefaultRouter()
 router.register(r'team', views.TeamViewSet)
 router.register(r'player', views.PlayerViewSet)
