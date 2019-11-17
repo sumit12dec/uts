@@ -25,7 +25,7 @@ SECRET_KEY = 'tl8iw9e_b!#b=_oj@!67q^l75&r*z7ce-x1si0%pkx&_5k_!ey'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['utsinterview-env.uvppnpfbjm.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'info.apps.InfoConfig',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 FAKER_LOCALE = None     # settings.LANGUAGE_CODE is loaded
@@ -49,7 +50,14 @@ FAKER_PROVIDERS = None  # faker.DEFAULT_PROVIDERS is loaded (all)
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
 
 }
 
