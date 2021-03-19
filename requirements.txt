@@ -3,7 +3,7 @@ backcall==0.1.0
 decorator==4.4.1
 Django==2.1
 django-autofixture==0.12.1
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 fake-factory==9999.9.9
 ipython==7.9.0
 ipython-genutils==0.2.0
