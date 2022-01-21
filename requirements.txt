@@ -5,7 +5,7 @@ Django==2.1
 django-autofixture==0.12.1
 djangorestframework==3.10.3
 fake-factory==9999.9.9
-ipython==7.9.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 jedi==0.15.1
 parso==0.5.1
